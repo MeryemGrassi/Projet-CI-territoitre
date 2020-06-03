@@ -1,4 +1,4 @@
-# Projet-CI-territoitre
+# Projet-CI-territoire
 L’idée est de constituer une « carte d’identité » de n’importe quelle commune de Provence-Alpes-Côte d’Azur,
 qui permettrait de la valoriser, à travers la disponibilité d’informations essentielles à une perception globale de son territoire.
 Une telle carte permettrait également de mettre au même niveau de lisibilité une commune de 50, 1000, 100 000 ou 1 M d’habitants.

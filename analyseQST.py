@@ -5,17 +5,15 @@ Created on Thu Jun 18 08:43:49 2020
 @author: elo
 
 """
-# import des librairies:
+# import des librairies
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.feature_extraction.text import CountVectorizer
-import nltk
-from nltk import word_tokenize
 import numpy as np
 
 # chargement du fichier de réponses:
-df = pd.read_csv(r'C:\Users\scriba\Drive_Go\Wild_Code_School\PROJET_4\REP_QST.csv', skiprows = 1,  names = ['horodateur', 'Q1', 'Q2', 'QO'])
+df = pd.read_csv('https://raw.githubusercontent.com/MeryemGrassi/Projet-CI-territoitre/master/REP_QST.csv', skiprows = 1,  names = ['horodateur', 'Q1', 'Q2', 'QO'])
 NOMBRE_REPONSES = len(df)
 
 
@@ -90,7 +88,7 @@ df_stat.reset_index(inplace = True)
 df_stat = df_stat.sort_values(by = 'nombre de vote', ascending = False)
 
 
-# visualisation
+# ///////visualisations ///////
 
 #REGLAGES FENETRE GRAPHIQUE
 font = {'family' : 'tahoma',
@@ -100,7 +98,6 @@ font = {'family' : 'tahoma',
 plt.rc('font', **font)
 
 # histogramme avec SEABORN
-
 plt.figure(figsize = (14,12))
 g = sns.barplot(data = df_stat, y = 'index', x = 'pourcentage de votes', palette = 'Set2')
 ax = g.axes

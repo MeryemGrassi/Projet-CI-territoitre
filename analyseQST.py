@@ -69,7 +69,7 @@ res = cv.fit_transform(X)
 
 # création d'un dataframe:
 features = cv.get_feature_names() #vérification du découpage / CV
-resQ = pd.DataFrame(res.A, columns = features) #simplification des noms des colonnes, utiliser ensuite vocab complet ?
+resQ = pd.DataFrame(res.A, columns = vocabulaire) #simplification des noms des colonnes, utiliser ensuite vocab complet ?
 resQ = pd.concat([X, resQ], axis = 1)
 
 
@@ -77,7 +77,7 @@ resQ = pd.concat([X, resQ], axis = 1)
 # resQ.to_csv('out.csv')
 
 #Calcul de stats sur le df resQ
-votes = resQ.loc[:,'hôtels':'qualité'].sum()
+votes = resQ.loc[:,"Hôtels / camping/ Auberges":"Qualité de l'air"].sum()
 percentVote = votes/NOMBRE_REPONSES*100
 
 # création d'un dataframe qui reprend les colonnes votes et percentVote
@@ -98,6 +98,7 @@ font = {'family' : 'tahoma',
 plt.rc('font', **font)
 
 # histogramme avec SEABORN
+#TODO : mettre le nom complet en index
 plt.figure(figsize = (14,12))
 g = sns.barplot(data = df_stat, y = 'index', x = 'pourcentage de votes', palette = 'Set2')
 ax = g.axes
